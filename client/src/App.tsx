@@ -10,8 +10,13 @@ import {
 	Route,
 	Routes,
 } from "react-router-dom";
-import Dashboard from "@/pages/dashboard";
-import Layout from "@/pages/layout";
+
+// Pages
+import Dashboard from "@/pages/dashboard/dashboard";
+import Products from "@/pages/products/products";
+
+// Components
+import Layout from "@/components/layout";
 import { useAppSelector } from "./hooks";
 
 function App() {
@@ -22,6 +27,7 @@ function App() {
 		() => createTheme(themeSettings(mode)),
 		[mode]
 	);
+
 	return (
 		<div className="app">
 			<BrowserRouter>
@@ -38,6 +44,10 @@ function App() {
 							<Route
 								path="/dashboard"
 								element={<Dashboard />}
+							/>
+							<Route
+								path="/products"
+								element={<Products />}
 							/>
 						</Route>
 					</Routes>

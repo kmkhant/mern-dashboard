@@ -1,43 +1,15 @@
 interface CustomPalettes {
 	mode: PaletteMode;
 	primary: {
-		100: string;
-		200: string;
-		300: string;
-		400: string;
-		500: string;
-		600: string;
-		700: string;
-		800: string;
-		900: string;
 		main: string;
 		light: string;
 	};
 	secondary: {
-		100: string;
-		200: string;
-		300: string;
-		400: string;
-		500: string;
-		600: string;
-		700: string;
-		800: string;
-		900: string;
 		main: string;
 	};
 	neutral: {
-		100: string;
-		200: string;
-		300: string;
-		400: string;
-		500: string;
-		600: string;
-		700: string;
-		800: string;
-		900: string;
 		main: string;
 	};
-	background: CustomTypeBackground;
 }
 
 interface CustomTypeBackground {
@@ -47,17 +19,16 @@ interface CustomTypeBackground {
 
 // add new palette colors here
 declare module "@mui/material/styles" {
-	interface Palettes extends CustomPalettes {}
-
-	interface CustomTheme extends Theme {}
+	interface Palette extends CustomPalettes {}
 	interface CustomThemeOptions extends ThemeOptions {
-		palette: Palettes;
+		palette: Palette;
 	}
 
 	export function createTheme(
 		options: CustomThemeOptions
-	): CustomTheme;
+	): Theme;
 }
+
 declare module "@mui/material/styles/createPalette" {
 	interface Palettes extends CustomPalettes {}
 	interface TypeBackground extends CustomTypeBackground {}
@@ -165,8 +136,8 @@ export const themeSettings = (mode: string) => {
 						// palette values for light mode
 						primary: {
 							...tokensLight.primary,
-							main: tokensDark.grey[500],
-							light: tokensDark.grey[100],
+							main: tokensDark.primary[500],
+							light: tokensDark.primary[100],
 						},
 						secondary: {
 							...tokensLight.secondary,
@@ -178,8 +149,8 @@ export const themeSettings = (mode: string) => {
 							main: tokensDark.grey[500],
 						},
 						background: {
-							default: tokensDark.grey[1000],
-							alt: tokensDark.grey[500],
+							default: tokensDark.secondary[200],
+							alt: tokensDark.secondary[300],
 						},
 						// eslint-disable-next-line no-mixed-spaces-and-tabs
 				  }),
