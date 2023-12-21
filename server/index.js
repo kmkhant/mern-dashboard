@@ -16,12 +16,16 @@ import salesRoutes from "./routes/sales.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
+import OverallStat from "./models/OverallStat.js";
 
 import {
 	dataUser,
 	dataProduct,
 	dataProductStat,
+	dataTransaction,
+	dataOverallStat,
 } from "./data/index.js";
+import Transaction from "./models/Transaction.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -59,7 +63,8 @@ mongoose
 			// User.insertMany(dataUser);
 			// Product.insertMany(dataProduct);
 			// ProductStat.insertMany(dataProductStat);
-
+			// Transaction.insertMany(dataTransaction);
+			// OverallStat.insertMany(dataOverallStat);
 			console.log(`Server Port: ${PORT}`);
 		});
 	})

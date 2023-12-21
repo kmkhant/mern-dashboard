@@ -245,7 +245,7 @@ const Sidebar: React.FC<ISidebarProps> = ({
 						</List>
 					</Box>
 					<Box
-						position="absolute"
+						position="relative"
 						bottom="2rem"
 						width={"100%"}
 					>

@@ -14,10 +14,14 @@ import {
 // Pages
 import Dashboard from "@/pages/dashboard/dashboard";
 import Products from "@/pages/products/products";
+import Customers from "@/pages/customers/customers";
+import Transaction from "@/pages/transaction/transactions";
 
 // Components
 import Layout from "@/components/layout";
 import { useAppSelector } from "./hooks";
+import Geography from "./pages/geography";
+import Overview from "./pages/overview/overview";
 
 function App() {
 	const mode = useAppSelector(
@@ -48,6 +52,22 @@ function App() {
 							<Route
 								path="/products"
 								element={<Products />}
+							/>
+							<Route
+								path="/customers"
+								element={<Customers />}
+							/>
+							<Route
+								path="/transactions"
+								element={<Transaction />}
+							/>
+							<Route
+								path="/geography"
+								element={<Geography />}
+							/>
+							<Route
+								path="/overview"
+								element={<Overview />}
 							/>
 						</Route>
 					</Routes>
