@@ -60,6 +60,7 @@ mongoose
 	.then(() => {
 		app.listen(PORT, () => {
 			// add only once
+			// console.log("INSIDE")
 			// User.insertMany(dataUser);
 			// Product.insertMany(dataProduct);
 			// ProductStat.insertMany(dataProductStat);
